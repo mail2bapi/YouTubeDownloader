@@ -1,0 +1,20 @@
+{
+  "name": "mail2bapi/YouTubeDownloader",
+  "description": "PHP library for downloading YouTube videos",
+  "homepage": "https://github.com/mail2bapi/YouTubeDownloader/tree/main",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bapi Roy",
+      "email": "mail2bapi@astrosoft.co.in"
+    }
+  ],
+  "require": {
+    "php": ">=7.3.7",
+    "phpunit/phpunit": "^9.4"
+  },
+  "config": {
+    "optimize-autoloader": true
+  }
+}
