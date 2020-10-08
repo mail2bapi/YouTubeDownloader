@@ -205,7 +205,7 @@ class YoutubeDownloader
         }
 
         // Saving to local disk
-        $fileName = $quality.'_'.date('ymdhis');
+        $fileName = 'ytvideo_'.$quality;
         $videoFileWithPath = $downloadFolder.$fileName.'.mp4';
         $videoFile = file_put_contents($videoFileWithPath, $videoFile);
         if($videoFile === false){
@@ -228,7 +228,7 @@ class YoutubeDownloader
         foreach ($video['thumbnails'] as $thumbnail){
             // Downloading file
             $thumbnailFile = @file_get_contents($thumbnail['url']);
-            $fileName = 'ytimg_'.$thumbnail['width'].'-'.$thumbnail['height'].'px_'.date('ymdhis');
+            $fileName = 'ytimg_'.$thumbnail['width'].'-'.$thumbnail['height'].'px';
             $thumbnailFileWithPath = $downloadFolder.$fileName.'.jpg';
             @file_put_contents($thumbnailFileWithPath, $thumbnailFile);
         }
