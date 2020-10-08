@@ -5,7 +5,7 @@
  * Time: 7:07 PM
  **/
 
-namespace mail2bapi\YoutubeDownloader;
+namespace Mail2bapi\YouTubeDownloader;
 
 class YoutubeDownloader
 {
@@ -57,7 +57,7 @@ class YoutubeDownloader
      * @param string $url
      * @return $this
      */
-    public function getVideoId(string $url): self
+    public function getVideoId(string $url): string
     {
         if(empty($url)){
             throw new \RuntimeException('Youtube video URL is missing');
@@ -66,7 +66,7 @@ class YoutubeDownloader
         parse_str( parse_url( $url, PHP_URL_QUERY ), $vars);
         $this->videoId = isset($vars['v'])? $vars['v'] : '';
 
-        return $this;
+        return $this->videoId;
     }
 
     /**
@@ -264,6 +264,4 @@ class YoutubeDownloader
     {
         $this->logging = $logging;
     }
-
-
 }
