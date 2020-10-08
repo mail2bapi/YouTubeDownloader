@@ -221,9 +221,12 @@ class YoutubeDownloader
     public function downloadThumbnails(array $video): self
     {
         $downloadFolder = $this->downloadFolder.$video['video_id'].'/';
-        if (!mkdir($downloadFolder, 755, true) && !is_dir($downloadFolder)) {
-            throw new \RuntimeException(sprintf('Directory "%s" was not created', $downloadFolder));
+        if (!file_exists($downloadFolder)){
+            if (!mkdir($downloadFolder, 755, true) && !is_dir($downloadFolder)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $downloadFolder));
+            }
         }
+
 
         foreach ($video['thumbnails'] as $thumbnail){
             // Downloading file
