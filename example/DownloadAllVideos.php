@@ -11,6 +11,6 @@ use Mail2bapi\YouTubeDownloader\YoutubeDownloader;
 $yt = new YoutubeDownloader();
 $videos = $yt->getVideoDetail('https://www.youtube.com/watch?v=Pg4XhiV_72Y');
 $yt->downloadThumbnails($videos)
-    ->downloadThumbnails();
+    ->downloadVideo();
 
 echo  'Done'.PHP_EOL;
